@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "Invisible Addiction",
+  "version": "1.0.0",
+  "description": "Track your doom scrolling habits in real-time.",
+  "action": {
+    "default_icon": {
+      "16":  "icons/icon16.jpeg",
+      "48":  "icons/icon48.jpeg",
+      "128": "icons/icon128.jpeg"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*",
+        "*://*.instagram.com/*",
+        "*://*.twitter.com/*",
+        "*://*.x.com/*",
+        "*://*.reddit.com/*",
+        "*://*.tiktok.com/*",
+        "*://*.facebook.com/*",
+        "*://*.netflix.com/*",
+        "*://*.twitch.tv/*",
+        "*://*.pinterest.com/*",
+        "*://*.tumblr.com/*",
+        "*://*.snapchat.com/*",
+        "*://*.linkedin.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "permissions": ["storage", "activeTab", "scripting", "tabs"],
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "*://*.instagram.com/*",
+    "*://*.twitter.com/*",
+    "*://*.x.com/*",
+    "*://*.reddit.com/*",
+    "*://*.tiktok.com/*",
+    "*://*.facebook.com/*",
+    "*://*.netflix.com/*",
+    "*://*.twitch.tv/*",
+    "*://*.pinterest.com/*",
+    "*://*.tumblr.com/*",
+    "*://*.snapchat.com/*",
+    "*://*.linkedin.com/*"
+  ]
+}
